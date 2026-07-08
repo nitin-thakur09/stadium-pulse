@@ -2,8 +2,8 @@
 
 A GenAI-powered assistant that helps fans navigate FIFA World Cup 2026 stadiums in real time — with crowd-aware routing, first-class accessibility support, multilingual conversation, and sustainability nudges.
 
-**Live demo:** [your-vercel-url-here.vercel.app]
-**Repo:** [your-github-repo-url-here]
+**Live demo:** (https://stadium-pulse-fawn.vercel.app/)
+
 
 ---
 
