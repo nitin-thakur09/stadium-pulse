@@ -1,5 +1,5 @@
 import { google } from '@ai-sdk/google';
-import { streamText, tool } from 'ai';
+import { streamText, tool, convertToModelMessages } from 'ai';
 import { checkRateLimit, validateAndSanitizeNodeId } from '../../../lib/security';
 import { calculateRoute, detectLanguage, RouteResult } from '../../../lib/routing';
 import { SUSTAINABILITY_DATA, NODES, SustainabilityData } from '../../../lib/data';
@@ -62,7 +62,7 @@ Safety rules:
 
     const result = streamText({
       model: google('gemini-1.5-flash'),
-      messages,
+      messages: convertToModelMessages(messages),
       system: systemPrompt,
       tools: {
         getRoute: tool({
