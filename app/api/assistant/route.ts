@@ -1,5 +1,5 @@
 import { google } from '@ai-sdk/google';
-import { streamText, tool, convertToModelMessages } from 'ai';
+import { streamText, tool, convertToModelMessages, stepCountIs } from 'ai';
 import { checkRateLimit, validateAndSanitizeNodeId } from '../../../lib/security';
 import { calculateRoute, detectLanguage, RouteResult } from '../../../lib/routing';
 import { SUSTAINABILITY_DATA, NODES, SustainabilityData } from '../../../lib/data';
@@ -64,6 +64,7 @@ Safety rules:
       model: google('gemini-2.5-flash'),
       messages: await convertToModelMessages(messages),
       system: systemPrompt,
+      stopWhen: stepCountIs(5),   // ← add this line
       tools: {
         getRoute: tool({
           description: '...',
