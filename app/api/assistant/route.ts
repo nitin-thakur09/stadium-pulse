@@ -61,7 +61,7 @@ Safety rules:
 - Keep your tone concise, helpful, and athletic. Avoid long paragraphs.`;
 
     const result = streamText({
-      model: google('gemini-1.5-flash'),
+      model: google('gemini-2.5-flash'),
       messages: await convertToModelMessages(messages),
       system: systemPrompt,
       tools: {
