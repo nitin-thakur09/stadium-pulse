@@ -62,7 +62,7 @@ Safety rules:
 
     const result = streamText({
       model: google('gemini-1.5-flash'),
-      messages: convertToModelMessages(messages),
+      messages: await convertToModelMessages(messages),
       system: systemPrompt,
       tools: {
         getRoute: tool({
